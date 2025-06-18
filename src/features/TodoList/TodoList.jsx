@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import TodoItem from './TodoItem';
 import { fetchTodos } from './TodoService';
+import { CircleArrowUp } from 'lucide-react';
 
-const TodoList = () => {
+const TodoList = ({scrollTo, counterRef}) => {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
@@ -36,7 +37,7 @@ const TodoList = () => {
     };
 
   return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+        <div className="relative min-h-screen flex items-center justify-center bg-gray-100 p-6">
             <div className="w-full min-h-[600px] max-w-2xl bg-white rounded-xl shadow-lg p-6">
                 <h1 className='text-3xl font-bold text-center mb-3'>Task 3</h1>
                 <h1 className="text-2xl font-bold text-center mb-6">Todo List</h1>
@@ -52,6 +53,12 @@ const TodoList = () => {
                     )) : <p className='text-center text-gray-400'>No data found</p>}
                 </ul>
             </div>
+            <button
+                onClick={() => scrollTo(counterRef)}
+                className="absolute cursor-pointer right-10 bottom-10 mt-8 px-4 py-2 bg-black text-white rounded"
+                    >
+                    <CircleArrowUp />
+                </button>
         </div>
     )
 }

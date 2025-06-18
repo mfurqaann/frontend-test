@@ -1,6 +1,7 @@
+import { CircleArrowDown } from 'lucide-react'
 import { useState } from 'react'
 
-const Counter = () => {
+const Counter = ({scrollTo, formRef}) => {
     const [count, setCount] = useState(0)
 
     const handleIncrement = () => {
@@ -11,12 +12,11 @@ const Counter = () => {
     }
 
     return (
-        <div className='bg-gray-100'>
-
+        <div className='relative bg-gray-100'>
             <div className="flex flex-col items-center justify-center min-h-screen ">
                 <h1 className='text-3xl font-bold mb-3'>Task 1</h1>
                 <h2 className="text-2xl font-semibold mb-4">Counter</h2>
-                <div className="text-5xl font-bold mb-6">{count}</div>
+                <div className="md:text-8xl text-5xl font-bold mb-6">{count}</div>
                 <div className="flex gap-4">
                     <button
                         onClick={handleDecrement}
@@ -34,6 +34,12 @@ const Counter = () => {
                         +
                     </button>
                 </div>
+                <button
+                    onClick={() => scrollTo(formRef)}
+                    className="absolute cursor-pointer right-10 bottom-10 mt-8 px-4 py-2 bg-black text-white rounded"
+                    >
+                    <CircleArrowDown />
+                </button>
             </div>
         </div>
     )

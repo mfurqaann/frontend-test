@@ -1,6 +1,7 @@
+import { CircleArrowDown } from "lucide-react"
 import { useState } from "react"
 
-const Form = () => {
+const Form = ({scrollTo, todoRef}) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -22,6 +23,7 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsFormValid(false)
         if (validation()) {
             setIsFormValid(true)
         }
@@ -39,7 +41,7 @@ const Form = () => {
             error.email = "Please enter a valid email address"
         }
 
-        if (!formData.password.length < 8) {
+        if (formData.password.length < 8) {
             error.password = "Password must be at least 8 characters long"
         }
         
@@ -57,9 +59,9 @@ const Form = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+        <div className="relative min-h-screen flex items-center justify-center bg-gray-100 p-6">
             <div className="w-full min-h-[600px] max-w-2xl bg-white rounded-xl shadow-lg p-6">
-                <h1 className='text-3xl font-bold text-center mb-3'>Task 3</h1>
+                <h1 className='text-3xl font-bold text-center mb-3'>Task 2</h1>
                 <h3 className="text-2xl font-bold text-center mb-6">Register</h3>
                 <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
                     <div className="mb-5">
@@ -116,11 +118,17 @@ const Form = () => {
                         </button>
                     </div>
 
-                    <div className="text-center">
-                        {isFormValid && <p className="text-green-500">Form submitted successfully</p>}
+                    <div className="text-center transition-all ease-in-out">
+                        {isFormValid && <p className="mt-5 font-bold text-green-500">Form submitted successfully</p>}
                     </div>
                 </form>
             </div>
+             <button
+                onClick={() => scrollTo(todoRef)}
+                className="absolute cursor-pointer right-10 bottom-10 mt-8 px-4 py-2 bg-black text-white rounded"
+                    >
+                    <CircleArrowDown />
+                </button>
         </div>
     )
 }
