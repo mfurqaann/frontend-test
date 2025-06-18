@@ -1,8 +1,8 @@
-import React from 'react'
-
 const About = () => {
   return (
-    <div>About</div>
+    <div className='flex justify-center items-center min-h-screen'>
+      About Page
+    </div>
   )
 }
 
