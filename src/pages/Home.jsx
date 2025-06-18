@@ -4,9 +4,16 @@ import TodoList from '../features/TodoList/TodoList'
 
 const Home = () => {
   return (
-    <div>
-        <Counter/>
+    <div className='h-screen snap-y snap-mandatory overflow-y-scroll'>
+      <div className='h-screen snap-start'>
+        <Counter />
+      </div>
+      <div className='h-screen snap-start'>
+        <Form/>
+      </div>
+      <div className='h-screen snap-start'>
         <TodoList/>
+      </div>
     </div>
   )
 }
