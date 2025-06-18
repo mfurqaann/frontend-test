@@ -1,12 +1,37 @@
-# React + Vite
+# Simple React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application built for technical assessment for a job application. It demonstrates core skills in React, including:
 
-Currently, two official plugins are available:
+- State management with hooks
+- Form handling and validation
+- Fetching data from a Public API (JSONPlaceholder)
+- Routing and navigation using react-router-dom
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React (with Vite)** — Fast and modern frontend framework for building user interfaces.
+- **TailwindCSS** — Utility-first CSS framework for rapid UI development with customizable and responsive design out of the box.
+- **React Router DOM** — Declarative routing library for managing navigation between views in a single-page application.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to run the Project
+
+Follow the instructions below to run the application locally.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/mfurqaann/frontend-test.git
+cd frontend-test
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the app
+npm run dev
+
+# 4. Open the app in your browser
+http://localhost:5173
+```
+
+## Final Notes
+
+This project is intended to show case my understanding of React fundamentals and my ability to structure, style and manage a small application.
